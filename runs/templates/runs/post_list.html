@@ -15,7 +15,7 @@
     {% for run in object_list %}
     <h2>{{run.title}}</h2>
     <p>{{run.distance}} km</p>
-    <p>{{run.duration}}</p>
+    <p>{{run.hours}}h {{run.minutes}}m {{run.seconds}}s</p>
     <p>Author: {{run.author}}</p>
     {% endfor %}
 </body>
