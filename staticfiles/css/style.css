@@ -159,3 +159,10 @@ body {
 .approval {
     color: rgb(222, 146, 168);
 }
+
+.post-content {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    background-color: #FF6A00 ;
+    color: #DDE3E9;
+}

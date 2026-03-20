@@ -11,7 +11,7 @@
                 <p class="post-subtitle">{{ run.author }} | {{ run.created_on }}</p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
-                <img src="{% static 'images/pexels-runffwpu-2526878.jpg' %}" class="scale" alt="Running Image">
+                <img src="{% static 'images/pexels-runffwpu-2526878.jpg' %}" class="scale" alt="Running Image | Photo by RUN 4 FFWPU  : https://www.pexels.com/photo/people-wearing-running-shoes-2526878/">
             </div>
         </div>
     </div>
@@ -24,6 +24,7 @@
                 <!-- The post content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
                 <p class="card-text">
+                    <span class="h5">Distance:</span>
                     {{ run.distance | safe }} km
                     <br />
                     {{ run.hours | safe }} h {{ run.minutes | safe }} min {{ run.seconds | safe }} sec

@@ -22,7 +22,7 @@ def run_detail(request, slug):
     :template:`runs/run_detail.html`
     """
 
-    queryset = Run.objects.filter(status=1)
+    queryset = Run.objects.all()
     run = get_object_or_404(queryset, slug=slug)
 
     return render(
