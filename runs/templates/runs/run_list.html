@@ -12,11 +12,11 @@
 
 <body>
     <h1>All Runs</h1>
-    {% for run in object_list %}
-    <h2>{{run.title}}</h2>
-    <p>{{run.distance}} km</p>
-    <p>{{run.hours}}h {{run.minutes}}m {{run.seconds}}s</p>
-    <p>Author: {{run.author}}</p>
+    {% for Run in object_list %}
+    <h2>{{Run.title}}</h2>
+    <p>{{Run.distance}} km</p>
+    <p>{{Run.hours}}h {{Run.minutes}}m {{Run.seconds}}s</p>
+    <p>Author: {{Run.author}}</p>
     {% endfor %}
 </body>
 
