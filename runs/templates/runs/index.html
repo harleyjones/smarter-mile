@@ -18,10 +18,10 @@
                                     <p class="author">Author: {{ run.author }}</p>
                                 </div>
                             </div>
-                            <a href="#" class="post-link">
+                            <a href="{% url 'run_detail' run.slug %}" class="post-link">
                                 <h2 class="card-title">{{ run.title }}</h2>
                                 <p class="card-text">{{ run.distance }} km</p>
-                                <p class="card-text">{{ run.hours }} h {{ run.minutes }} min {{ run.seconds }} sec</p>
+                                <p class="card-text">{% if run.hours > 0 %}{{ run.hours }} h {% endif %} {% if run.minutes > 0 %}{{ run.minutes }} min {% endif %}{% if run.seconds > 0 %}{{ run.seconds }} sec{% endif %}</p>
                             </a>
 
                             <hr />
