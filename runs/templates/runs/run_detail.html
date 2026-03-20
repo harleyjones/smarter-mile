@@ -11,27 +11,43 @@
                 <p class="post-subtitle">{{ run.author }} | {{ run.created_on }}</p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
-                <img src="{% static 'images/pexels-runffwpu-2526878.jpg' %}" class="scale" alt="Running Image | Photo by RUN 4 FFWPU  : https://www.pexels.com/photo/people-wearing-running-shoes-2526878/">
+                <img src="{% static 'images/pexels-runffwpu-2526878.jpg' %}" class="scale"
+                    alt="Running Image | Photo by RUN 4 FFWPU  : https://www.pexels.com/photo/people-wearing-running-shoes-2526878/">
             </div>
         </div>
     </div>
 </div>
 
 <div class="container">
-    <div class="row">
-        <div class="col card mb-4  mt-3 left  top">
+    <div class="col card mb-4  mt-3 left  top">
+        <div class="row">
             <div class="card-body">
                 <!-- The post content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
                 <p class="card-text">
-                    <span class="h5">Distance:</span>
-                    {{ run.distance | safe }} km
-                    <br />
-                    {{ run.hours | safe }} h {{ run.minutes | safe }} min {{ run.seconds | safe }} sec
-                </p>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <span class="post-content">
+                            <span class="h5">Distance:</span>
+                            {{ run.distance | safe }} km
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <!-- The post content goes inside the card-text. -->
+                <!-- Use the | safe filter inside the template tags -->
+                <p class="card-text">
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <span class="post-content"> <span class="h5">Time:</span> {{ run.hours | safe }} h {{ run.minutes | safe }} min {{ run.seconds | safe }} sec </span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
+</div>
+
 
 {% endblock content %}
