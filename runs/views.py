@@ -30,16 +30,16 @@ def run_detail(request, slug):
     comment_count = run.comments.filter(approved=True).count()
 
     if request.method == "POST":
-    comment_form = CommentForm(data=request.POST)
-    if comment_form.is_valid():
-        comment = comment_form.save(commit=False)
-        comment.author = request.user
-        comment.run = run
-        comment.save()
-        messages.add_message(
-            request, messages.SUCCESS,
-            'Comment submitted successfully!'
-        )
+        comment_form = CommentForm(data=request.POST)
+        if comment_form.is_valid():
+            comment = comment_form.save(commit=False)
+            comment.author = request.user
+            comment.run = run
+            comment.save()
+            messages.add_message(
+                request, messages.SUCCESS,
+                'Comment submitted successfully!'
+            )
 
 
     comment_form = CommentForm()
