@@ -3,12 +3,12 @@
 I created a website to track the date, time, length and duration of my runs, with a login and comment functionality.
 
 ## Wireframes:
-![Wireframe 1]([https://github.com/harleyjones/smarter-mile/Documentation/baseWireframe.jpg](https://github.com/harleyjones/smarter-mile/blob/main/Documentation/HomeWireframe.jpg))
-![Wireframe 2](https://github.com/harleyjones/smarter-mile/Documentation/HomeWireframe.jpg)
-![Wireframe 3](https://github.com/harleyjones/smarter-mile/Documentation/Runs.jpg)
+![Wireframe 1](https://files.catbox.moe/9fjbwc.jpg)
+![Wireframe 2](https://files.catbox.moe/nzsxj1.jpg)
+![Wireframe 3](https://files.catbox.moe/f1ylnd.jpg)
 
 ## Testing:
-![Test](https://github.com/harleyjones/smarter-mile/Documentation/Test1.png)
+![Test](https://files.catbox.moe/jp5zny.png)
 
 ## Deployment
 Deployed on Heroku using Eco-Dyno's and including it in ALLOWED_HOSTS.
