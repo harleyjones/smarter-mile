@@ -5,4 +5,5 @@ from .models import Run
 # Create your views here.
 class RunList(generic.ListView):
     queryset = Run.objects.all()
-    template_name = "run_list.html"
+    template_name = "runs/index.html"
+    paginate_by = 6
