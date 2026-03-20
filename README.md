@@ -1,1 +1,1 @@
-# smarter-mile
+# Smarter Mile
