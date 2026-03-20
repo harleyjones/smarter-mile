@@ -7,9 +7,10 @@ from .forms import CommentForm
 
 # Create your views here.
 class RunList(generic.ListView):
-    queryset = Run.objects.all()
-    template_name = "runs/index.html"
+    queryset = Run.objects.filter(status=1)
+    template_name = "blog/index.html"
     paginate_by = 6
+
 
 def run_detail(request, slug):
     """
@@ -35,11 +36,11 @@ def run_detail(request, slug):
         if comment_form.is_valid():
             comment = comment_form.save(commit=False)
             comment.author = request.user
-            comment.run = run
+            comment.post = run
             comment.save()
             messages.add_message(
                 request, messages.SUCCESS,
-                'Comment submitted successfully!'
+                'Comment submitted and awaiting approval'
             )
 
     comment_form = CommentForm()
@@ -47,12 +48,14 @@ def run_detail(request, slug):
     return render(
         request,
         "runs/run_detail.html",
-        {"run": run,
-         "comments": comments,
-         "comment_count": comment_count,
-         "comment_form": comment_form,
-         },
+        {
+            "run": run,
+            "comments": comments,
+            "comment_count": comment_count,
+            "comment_form": comment_form,
+        },
     )
+
 
 def comment_edit(request, slug, comment_id):
     """
@@ -67,14 +70,15 @@ def comment_edit(request, slug, comment_id):
 
         if comment_form.is_valid() and comment.author == request.user:
             comment = comment_form.save(commit=False)
-            comment.run = run
-            comment.approved = True
+            comment.post = run
+            comment.approved = False
             comment.save()
             messages.add_message(request, messages.SUCCESS, 'Comment Updated!')
         else:
             messages.add_message(request, messages.ERROR, 'Error updating comment!')
 
     return HttpResponseRedirect(reverse('run_detail', args=[slug]))
+
 
 def comment_delete(request, slug, comment_id):
     """
