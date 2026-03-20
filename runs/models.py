@@ -11,6 +11,11 @@ class Run(models.Model):
     distance = models.FloatField()
     duration = models.DurationField()
     updated_on = models.DateTimeField(auto_now=True)
+    class Meta:
+        ordering = ["-created_on"]
+
+    def __str__(self):
+        return f"{self.title} | By {self.author}"
 
 
 class Comment(models.Model):
@@ -22,3 +27,8 @@ class Comment(models.Model):
     approved = models.BooleanField(default=True)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
+    class Meta:
+        ordering = ["-created_on"]
+
+    def __str__(self):
+        return f"{self.post.title} | By {self.author}"
