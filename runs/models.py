@@ -10,3 +10,4 @@ class Run(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     distance = models.FloatField()
     duration = models.DurationField()
+    updated_on = models.DateTimeField(auto_now=True)
