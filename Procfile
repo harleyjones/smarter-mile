@@ -1,1 +1,1 @@
-web: gunicorn smartermile.wsgi
+web: gunicorn smartmile.wsgi
