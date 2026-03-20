@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator, MinValueValidator
 
+STATUS = ((0, "Draft"), (1, "Published"))
+
 # Create your models here.
 class Run(models.Model):
     title = models.CharField(max_length=200, blank=False)
@@ -14,6 +16,7 @@ class Run(models.Model):
     minutes = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(59)])
     seconds = models.IntegerField(default=1, validators=[MinValueValidator(0), MaxValueValidator(59)])
     updated_on = models.DateTimeField(auto_now=True)
+    status = models.IntegerField(choices=STATUS, default=0)
 
     class Meta:
         ordering = ["-created_on"]

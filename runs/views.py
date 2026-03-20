@@ -25,7 +25,7 @@ def run_detail(request, slug):
     :template:`runs/run_detail.html`
     """
 
-    queryset = Run.objects.all()
+    queryset = Run.objects.filter(status=1)
     run = get_object_or_404(queryset, slug=slug)
     comments = run.comments.all().order_by("-created_on")
     comment_count = run.comments.filter(approved=True).count()
@@ -68,7 +68,7 @@ def comment_edit(request, slug, comment_id):
         if comment_form.is_valid() and comment.author == request.user:
             comment = comment_form.save(commit=False)
             comment.run = run
-            comment.approved = False
+            comment.approved = True
             comment.save()
             messages.add_message(request, messages.SUCCESS, 'Comment Updated!')
         else:
