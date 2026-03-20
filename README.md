@@ -3,7 +3,7 @@
 I created a website to track the date, time, length and duration of my runs, with a login and comment functionality.
 
 ## Wireframes:
-![Wireframe 1](https://github.com/harleyjones/smarter-mile/Documentation/baseWireframe.jpg)
+![Wireframe 1]([https://github.com/harleyjones/smarter-mile/Documentation/baseWireframe.jpg](https://github.com/harleyjones/smarter-mile/blob/main/Documentation/HomeWireframe.jpg?raw=true))
 ![Wireframe 2](https://github.com/harleyjones/smarter-mile/Documentation/HomeWireframe.jpg)
 ![Wireframe 3](https://github.com/harleyjones/smarter-mile/Documentation/Runs.jpg)
 
