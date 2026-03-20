@@ -8,7 +8,7 @@ from .forms import CommentForm
 # Create your views here.
 class RunList(generic.ListView):
     queryset = Run.objects.filter(status=1)
-    template_name = "blog/index.html"
+    template_name = "runs/index.html"
     paginate_by = 6
 
 
