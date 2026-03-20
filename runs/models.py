@@ -11,6 +11,7 @@ class Run(models.Model):
     distance = models.FloatField()
     duration = models.DurationField()
     updated_on = models.DateTimeField(auto_now=True)
+
     class Meta:
         ordering = ["-created_on"]
 
@@ -27,6 +28,7 @@ class Comment(models.Model):
     approved = models.BooleanField(default=True)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
+    
     class Meta:
         ordering = ["-created_on"]
 

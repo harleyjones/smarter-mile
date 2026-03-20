@@ -1,6 +1,8 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views import generic
+from .models import Run
 
 # Create your views here.
-def my_runs(request):
-    return HttpResponse("Temp Response: My Runs")
+class PostList(generic.ListView):
+    queryset = Run.objects.all()
+    template_name = "post_list.html"
